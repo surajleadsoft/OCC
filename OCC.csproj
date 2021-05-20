@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ApplicationIcon>icom.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25467319-1A12-4260-8966-5523DC44583A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OCC</RootNamespace>
+    <AssemblyName>OCC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.4">
+      <HintPath>..\..\FaceDetection\FaceDetection\bin\Debug\Bunifu_UI_v1.4.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Charts, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.3.5\Assemblies\v2.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.3.5\Assemblies\v2.0\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddPatients.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddPatients.Designer.cs">
+      <DependentUpon>AddPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Address.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Address.Designer.cs">
+      <DependentUpon>Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Addresses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addresses.Designer.cs">
+      <DependentUpon>Addresses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddUsers.Designer.cs">
+      <DependentUpon>AddUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdvanceSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdvanceSearch.Designer.cs">
+      <DependentUpon>AdvanceSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllEmails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllEmails.Designer.cs">
+      <DependentUpon>AllEmails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllPatients.Designer.cs">
+      <DependentUpon>AllPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AreaMaster.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AreaMaster.Designer.cs">
+      <DependentUpon>AreaMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BedDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BedDetails.Designer.cs">
+      <DependentUpon>BedDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Beds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Beds.Designer.cs">
+      <DependentUpon>Beds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ByAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ByAdd.Designer.cs">
+      <DependentUpon>ByAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ByAge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ByAge.Designer.cs">
+      <DependentUpon>ByAge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ByCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ByCenter.Designer.cs">
+      <DependentUpon>ByCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ByDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ByDate.Designer.cs">
+      <DependentUpon>ByDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ByGender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ByGender.Designer.cs">
+      <DependentUpon>ByGender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ByName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ByName.Designer.cs">
+      <DependentUpon>ByName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contact.Designer.cs">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DailyReports.Designer.cs">
+      <DependentUpon>DailyReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbConnect.cs" />
+    <Compile Include="DGVPrinter.cs" />
+    <Compile Include="EmailFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailFiles.Designer.cs">
+      <DependentUpon>EmailFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmailMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailMaster.Designer.cs">
+      <DependentUpon>EmailMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Emails.Designer.cs">
+      <DependentUpon>Emails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fullname.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fullname.Designer.cs">
+      <DependentUpon>Fullname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="leadsjt6_TernaDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>leadsjt6_TernaDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master.Designer.cs">
+      <DependentUpon>Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Other.Designer.cs">
+      <DependentUpon>Other.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherDiseases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherDiseases.Designer.cs">
+      <DependentUpon>OtherDiseases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Password.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Password.Designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientsRemarkDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientsRemarkDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PleaseWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PleaseWait.Designer.cs">
+      <DependentUpon>PleaseWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Remark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Remark.Designer.cs">
+      <DependentUpon>Remark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Remarks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Remarks.Designer.cs">
+      <DependentUpon>Remarks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPreview.Designer.cs">
+      <DependentUpon>ReportPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectR.Designer.cs">
+      <DependentUpon>SelectR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectRemark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectRemark.Designer.cs">
+      <DependentUpon>SelectRemark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SpecificEmail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpecificEmail.Designer.cs">
+      <DependentUpon>SpecificEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestName.Designer.cs">
+      <DependentUpon>TestName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests.Designer.cs">
+      <DependentUpon>Tests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TotalBeds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TotalBeds.Designer.cs">
+      <DependentUpon>TotalBeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Updates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Updates.Designer.cs">
+      <DependentUpon>Updates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wards.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wards.Designer.cs">
+      <DependentUpon>Wards.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddPatients.resx">
+      <DependentUpon>AddPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Address.resx">
+      <DependentUpon>Address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Addresses.resx">
+      <DependentUpon>Addresses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUsers.resx">
+      <DependentUpon>AddUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvanceSearch.resx">
+      <DependentUpon>AdvanceSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllEmails.resx">
+      <DependentUpon>AllEmails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllPatients.resx">
+      <DependentUpon>AllPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AreaMaster.resx">
+      <DependentUpon>AreaMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BedDetails.resx">
+      <DependentUpon>BedDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Beds.resx">
+      <DependentUpon>Beds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ByAdd.resx">
+      <DependentUpon>ByAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ByAge.resx">
+      <DependentUpon>ByAge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ByCenter.resx">
+      <DependentUpon>ByCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ByDate.resx">
+      <DependentUpon>ByDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ByGender.resx">
+      <DependentUpon>ByGender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ByName.resx">
+      <DependentUpon>ByName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact.resx">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyReports.resx">
+      <DependentUpon>DailyReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailFiles.resx">
+      <DependentUpon>EmailFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailMaster.resx">
+      <DependentUpon>EmailMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emails.resx">
+      <DependentUpon>Emails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fullname.resx">
+      <DependentUpon>Fullname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master.resx">
+      <DependentUpon>Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other.resx">
+      <DependentUpon>Other.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherDiseases.resx">
+      <DependentUpon>OtherDiseases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PleaseWait.resx">
+      <DependentUpon>PleaseWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Remark.resx">
+      <DependentUpon>Remark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Remarks.resx">
+      <DependentUpon>Remarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="ReportPreview.resx">
+      <DependentUpon>ReportPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectR.resx">
+      <DependentUpon>SelectR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectRemark.resx">
+      <DependentUpon>SelectRemark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecificEmail.resx">
+      <DependentUpon>SpecificEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestName.resx">
+      <DependentUpon>TestName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests.resx">
+      <DependentUpon>Tests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalBeds.resx">
+      <DependentUpon>TotalBeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Updates.resx">
+      <DependentUpon>Updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wards.resx">
+      <DependentUpon>Wards.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="leadsjt6_TernaDBDataSet.xsc">
+      <DependentUpon>leadsjt6_TernaDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="leadsjt6_TernaDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>leadsjt6_TernaDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="leadsjt6_TernaDBDataSet.xss">
+      <DependentUpon>leadsjt6_TernaDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PatientsRemarkDataSet.xsc">
+      <DependentUpon>PatientsRemarkDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PatientsRemarkDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PatientsRemarkDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PatientsRemarkDataSet.xss">
+      <DependentUpon>PatientsRemarkDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\panel.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\panel2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\bg.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\side.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\preview.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\data.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\circle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\file.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\new.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\hard-hat-icon-21019.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\setting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\cal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\calling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\patients.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\patient-67-733426.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\patinet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\pat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\pat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\patientsd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\discharge1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\discharge2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\dis1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\data1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\dis.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\sharp_perm_contact_calendar_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\corona-measures.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\dis2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\discharge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\discharge-icon-12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\eh-covid19-protection.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\updated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\allocated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\allocated11.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\free.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\patientbed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\free1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Images\all.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icom.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
